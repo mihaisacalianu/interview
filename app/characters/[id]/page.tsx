@@ -48,7 +48,7 @@ const CharacterPage = async({ params }: PageProps) => {
                 <CardTitle>
                   {episode.name}
                 </CardTitle>
-                <Link href={episode.url}>View Details</Link>
+                <Link href={`/episodes/${episode.id}`}>View Details</Link>
               </Card>
           ))}
         </CardContent>
