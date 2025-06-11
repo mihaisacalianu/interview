@@ -25,8 +25,6 @@ const Locations = async () => {
 
   const locationData:LocationType[] = await getLocations();
 
-
-
   return (
     <div>
      <div className='w-60% mx-auto flex flex-col justify-center items-center gap-4'>

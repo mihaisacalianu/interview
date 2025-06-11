@@ -1,7 +1,8 @@
-"use client"
+// "use client"
 import React from 'react';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { getCharacters } from '@/actions';
+// import { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -24,24 +25,28 @@ type Characters = {
   url: string,
   created: string,
 }
-const CharactersPage = () => {
+const CharactersPage = async () => {
 
-  const [characters, setCharacters] = useState<Characters[]>([]);
+  // tranfosrmed the way I fecth data to match server actions and still left initial code bellow
 
-  useEffect(()=>{
-    const getData = async () =>{
-    const response = await fetch("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
-    setCharacters(data.results);
-  }
-    getData();
-  },[])
+  const charactersData: Characters[] = await getCharacters();
+
+  // const [characters, setCharacters] = useState<Characters[]>([]);
+
+  // useEffect(()=>{
+  //   const getData = async () =>{
+  //   const response = await fetch("https://rickandmortyapi.com/api/character");
+  //   const data = await response.json();
+  //   setCharacters(data.results);
+  // }
+  //   getData();
+  // },[])
 
 
 
   return (
     <div className='grid grid-cols-4 gap-3'>
-      {characters.map((character)=>{return (
+      {charactersData.map((character)=>{return (
         <Card key={character.id} className=''>
         <CardHeader>
           <Image src={character.image} alt="main card image" width={50} height={50}/>

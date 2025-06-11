@@ -1,5 +1,15 @@
 "use server"
 
+export const getCharacters = async () => {
+  try {
+    const reponse = await fetch("https://rickandmortyapi.com/api/character");
+    const charactersData = await reponse.json();
+    return charactersData.results;
+  } catch (error) {
+    console.log('There was an error',error);
+  }
+}
+
 export const getEpisodes = async () => {
   try{
     const response = await fetch("https://rickandmortyapi.com/api/episode");
