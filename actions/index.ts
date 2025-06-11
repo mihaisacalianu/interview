@@ -10,18 +10,6 @@ export const getCharacters = async () => {
   }
 }
 
-// export const getCharacter = async (id:number) => {
-//   try {
-//     const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-//     const characterData = await response.json();
-//     return characterData;
-//   } catch (error) {
-//     console.log('There was an error',error);
-//   }
-// }
-
-
-
 export const getCharacter = async (id: number) => {
   try {
     const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
