@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { getCharacters } from '@/actions';
+import { CharactersType } from '@/types/types';
 // import { useState, useEffect } from 'react';
 import {
   Card,
@@ -11,25 +12,11 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-type Characters = {
-  id: number,
-  name: string,
-  status: string,
-  species: string,
-  type: string,
-  gender: string,
-  origin: string,
-  location: string[],
-  image: string,
-  episode: string[],
-  url: string,
-  created: string,
-}
 const CharactersPage = async () => {
 
   // tranfosrmed the way I fecth data to match server actions and still left initial code bellow
 
-  const charactersData: Characters[] = await getCharacters();
+  const charactersData: CharactersType[] = await getCharacters();
 
   // const [characters, setCharacters] = useState<Characters[]>([]);
 
