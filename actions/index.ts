@@ -36,6 +36,35 @@ export const getCharacter = async (id: number) => {
   }
 }
 
+export const getEpisode = async (id: number) => {
+  try {
+    const response = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const episodeData = await response.json();
+    return episodeData;
+  } catch (error) {
+    console.error(`Error fetching character ${id}:`, error);
+    throw error;
+  }
+}
+
+
+export const getLocation = async (id: number) => {
+  try {
+    const response = await fetch(`https://rickandmortyapi.com/api/location/${id}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const locationData = await response.json();
+    return locationData;
+  } catch (error) {
+    console.error(`Error fetching character ${id}:`, error);
+    throw error;
+  }
+}
+
 
 
 

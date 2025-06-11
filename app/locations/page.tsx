@@ -5,10 +5,8 @@ import { LocationType, CharactersType, ResidentWithName, LocationWithBothResiden
 import  Link  from 'next/link';
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"

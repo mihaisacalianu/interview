@@ -19,7 +19,6 @@ const CharacterPage = async({ params }: PageProps) => {
   const {id} = await params;
   // data of the character with this id
   const caracterData:CharactersType = await getCharacter(parseInt(id));
-  console.log(caracterData.location.name);
   // get an array with all the id of episodes the character played in
   const characterEpisodes: number[] = caracterData.episode.map((episod)=>getIdFromUrl(episod));
   // fetch all episodes
