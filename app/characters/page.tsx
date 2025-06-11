@@ -10,7 +10,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
+import Link from 'next/link';
 
 const CharactersPage = async () => {
 
@@ -34,7 +35,8 @@ const CharactersPage = async () => {
   return (
     <div className='grid grid-cols-4 gap-3'>
       {charactersData.map((character)=>{return (
-        <Card key={character.id} className=''>
+        <Link key={character.id} href={`/characters/${character.id}`}>
+        <Card  className=''>
         <CardHeader>
           <Image src={character.image} alt="main card image" width={50} height={50}/>
           <CardTitle>{character.name}</CardTitle>
@@ -45,7 +47,7 @@ const CharactersPage = async () => {
           <p>Status: {character.species}</p>
         </CardContent>
       </Card>
-      )})
+      </Link>)})
       }
     </div>
   )
