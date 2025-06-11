@@ -11,9 +11,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { getIdFromUrl } from "../../../lib/utils";
-
-
+import { getIdFromUrl } from "../../../../../lib/utils";
 const CharacterPage = async({ params }: PageProps) => {
   // get param id
   const {id} = await params;
@@ -29,26 +27,26 @@ const CharacterPage = async({ params }: PageProps) => {
   return (
     <main className='w-[80%] mx-auto mt-10'>
         <Card className='flex '>
-        <CardHeader className='w-[30%]'>
-          <Image src={caracterData.image} alt="main card image" width={150} height={150}/>
+        <CardHeader className='w-[90%] mx-auto flex flex-col justify-center items-center'>
+          <Image src={caracterData.image} alt="main card image" width={450} height={150} className='w-[50%]'/>
           <CardTitle>{caracterData.name}</CardTitle>
           <CardDescription className='mb-6'>
             <h2>Species: {caracterData.species}</h2>
           </CardDescription>
         </CardHeader>
-        <CardContent className='w-[70%] mb-4'>
-          <h3>Description:</h3>
+        <CardContent className='w-[80%] mx-auto'>
+          <h3 className='text-2xl text-red-600'><strong>Description:</strong></h3>
           <p>Gender: {caracterData.gender}</p>
           <p>Status: {caracterData.status}</p>
           <h3>Location:</h3>
           <Link href={caracterData.location.url}>{caracterData.location.name}</Link>
           <h3>Episodes: </h3>
           {filteredEpisodes.map((episode)=>(
-              <Card className='flex gap-4' key={episode.id} >
-                <CardTitle>
+              <Card className='flex my-5 w-[60%] mx-auto' key={episode.id} >
+                <CardTitle className='text-xl text-center'>
                   {episode.name}
                 </CardTitle>
-                <Link href={`/episodes/${episode.id}`}>View Details</Link>
+                <Link href={`/episodes/${episode.id}`} className='hover:bg-blue-500 text-center text-white bg-blue-400 w-[20%] mx-auto p-2 rounded-md'>View Details</Link>
               </Card>
           ))}
         </CardContent>
