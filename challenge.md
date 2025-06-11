@@ -47,7 +47,7 @@ Create a small Next.js application that:
 
    - Clicking a list item should navigate to a detail view page:
      - `/characters/[id]` - done!
-     - `/locations/[id]` -
+     - `/locations/[id]` - done!
      - `/episodes/[id]` - done!
 
 6. **Character Detail Page**
@@ -66,7 +66,7 @@ Create a small Next.js application that:
 8. **Location Detail Page**
    - Display basic location information. - done!
    - Render a **list of residents** (characters). - done!
-   - Each resident name should link to the character’s detail page.
+   - Each resident name should link to the character’s detail page. -done!
 
 ---
 
