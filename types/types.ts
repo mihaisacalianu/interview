@@ -42,3 +42,7 @@ export type LocationWithBothResidents = LocationType & {
   residentNames: string[];
   residentDetails: ResidentWithName[];
 };
+
+export type PageProps = {
+  params: { id: string };
+};

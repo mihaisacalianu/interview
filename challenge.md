@@ -22,9 +22,9 @@ Create a small Next.js application that:
 1. **Home Page**
 
    - Create a root page (`/`) with **three navigation links**:
-     - Characters
-     - Locations
-     - Episodes
+     - Characters - done!
+     - Locations - done!
+     - Episodes - done!
 
 2. **Search Functionality**
 
@@ -46,26 +46,26 @@ Create a small Next.js application that:
 5. **Detail Pages**
 
    - Clicking a list item should navigate to a detail view page:
-     - `/characters/[id]`
+     - `/characters/[id]` - done!
      - `/locations/[id]`
      - `/episodes/[id]`
 
 6. **Character Detail Page**
 
-   - Display basic character information and image.
-   - Render a **list of episode cards** where the character appears:
-     - Each card should show the episode name and link to its detail page.
-   - Show the character’s **location information**, with a link to its corresponding location detail page.
+   - Display basic character information and image. - done!
+   - Render a **list of episode cards** where the character appears: - done!
+     - Each card should show the episode name and link to its detail page. - done!
+   - Show the character’s **location information**, with a link to its corresponding location detail page. - done!
 
 7. **Episode Detail Page**
 
-   - Display basic episode information.
+   - Display basic episode information. - done!
    - Show a **list of characters** featured in the episode.
    - Each character name should link to its detail page.
 
 8. **Location Detail Page**
-   - Display basic location information.
-   - Render a **list of residents** (characters).
+   - Display basic location information. - done!
+   - Render a **list of residents** (characters). - done!
    - Each resident name should link to the character’s detail page.
 
 ---
