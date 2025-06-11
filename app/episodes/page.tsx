@@ -1,5 +1,6 @@
 import React from 'react';
 import { getEpisodes } from '@/actions';
+import { EpisodeType } from '@/types/types';
 import {
   Card,
   CardAction,
@@ -9,17 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-
-type EpisodeType =  {
-      id: number,
-      name: string,
-      air_date: string,
-      episode: string,
-      characters: string[],
-      url: string,
-      created: string
-    }
 
 const EpisodesPage = async () => {
   const episodesData:EpisodeType[] = await getEpisodes();
