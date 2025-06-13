@@ -22,7 +22,7 @@ const FilteredLocations = ({ locations }: { locations: LocationType[] }) => {
   );
 
   return (
-    <div className='grid grid-cols-4 gap-4 w-[80%] mx-auto'>
+    <div className='grid grid-cols-3 gap-4 w-[80%] mx-auto'>
       {filtered.map((location) => (
         <Link key={location.id} href={`/locations/${location.id}`} >
           <Card className='w-full max-w-2xl hover:bg-zinc-100'>
