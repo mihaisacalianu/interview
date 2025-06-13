@@ -26,8 +26,8 @@ const LocationDetailsPage = async({ params }: PageProps) => {
   const filteredResidents: CharactersType[] = characters.filter((episod)=> locationResidents.includes(episod.id))
 
   return (
-    <main className='w-[80%] mx-auto mt-10'>
-        <Card className='flex '>
+    <main className='w-[80%] mx-auto mt-10 '>
+        <Card className='flex bg-[#EFEFEF]'>
         <CardHeader className='w-full'>
           <CardTitle className='text-4xl text-[#2C764C] text-center mb-3'>{locationData.name}</CardTitle>
           <CardDescription className='text-2xl text-center'>
@@ -35,20 +35,22 @@ const LocationDetailsPage = async({ params }: PageProps) => {
           </CardDescription>
         </CardHeader>
         <CardContent className='w-full mb-4'>
-          <h3><strong className='text-xl my-6'>Description:</strong></h3>
+          <h3><strong className='text-2xl my-10 text-[#2C764C]'>Description:</strong></h3>
           <p>Planet Dimensions: {locationData.dimension}</p>
           <h3 className='text-2xl my-6 text-[#2C764C] font-bold'>Planet Citizens:</h3>
-          {filteredResidents.map((resident)=>(
-              <Card className='grid grid-cols-2 mb-6 p-4 text-center w-[35%] mx-auto' key={resident.id} >
-                <Image src={resident.image} alt="image of a planet resident" width={100} height={50} className='rounded-md'/>
-                <div aria-label="resident details container" className='flex flex-col gap-3'>
-                  <CardTitle className='text-2xl text-[#2C764C] font-bold'>
-                    {resident.name}
-                  </CardTitle>
-                  <Link href={`/characters/${resident.id}`} className='hover:bg-[#DD3A0A] text-center text-white bg-[#EB862D] w-[60%] mx-auto p-2 rounded-md'>View Details</Link>
-                </div>
-              </Card>
-          ))}
+            <div aria-label="planet citizens container" className='grid grid-cols-3 w-full gap-4'>
+            {filteredResidents.map((resident)=>(
+                <Card className='grid grid-cols-2 mb-6 p-4 text-center w-full mx-auto' key={resident.id} >
+                  <Image src={resident.image} alt="image of a planet resident" width={100} height={50} className='rounded-md'/>
+                  <div aria-label="resident details container" className='flex flex-col gap-3'>
+                    <CardTitle className='text-2xl text-[#2C764C] font-bold'>
+                      {resident.name}
+                    </CardTitle>
+                    <Link href={`/characters/${resident.id}`} className='hover:bg-[#DD3A0A] text-center text-white bg-[#EB862D] w-[80%] mx-auto p-2 rounded-md'>View Details</Link>
+                  </div>
+                </Card>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </main>
