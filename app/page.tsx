@@ -1,13 +1,9 @@
-import Link from "next/link";
+import Image from "next/image"
 export default function Home() {
   return (
     <div >
-      <main>
-        <ul className="flex gap-10 my-4 items-center justify-center w-full text-4xl font-extrabold text-zinc-300 ">
-          <li><Link href="/characters" className="hover:text-zinc-400">Characters</Link></li>
-          <li><Link href="/locations" className="hover:text-zinc-400">Locations</Link></li>
-          <li><Link href="/episodes" className="hover:text-zinc-400">Episodes</Link></li>
-        </ul>
+      <main className="w-[100dvw] h-[100dvh] mx-auto flex flex-col">
+        <Image src="/mainBg.png" alt="hero image with ricky and morty" width={1000} height={1000} className="w-[100dvw] h-[100dvh]" priority/>
       </main>
     </div>
   );
