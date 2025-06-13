@@ -19,7 +19,7 @@ const SearchBar = () => {
       value={searchTerm}
       onChange={(event)=>setSearchTerm(event.target.value)}
       />
-      <Button>Search</Button>
+      <Button className='bg-[#EB862D] text-white font-bold hover:bg-[#DD3A0A]'>Search</Button>
     </form>
   )
 }
